@@ -9,6 +9,7 @@ import java.awt.Dialog;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ajbab
@@ -50,18 +51,22 @@ public class FrmDeleteEmployee extends javax.swing.JDialog {
         lblEmployeePhone = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 204, 255));
 
         lblEmployeeNo.setText("Employee No. :");
 
         txtEmployeeNo.setEditable(false);
+        txtEmployeeNo.setBackground(new java.awt.Color(255, 255, 255));
 
         lblemployName.setText("Employee Name:");
 
         txtemployName.setEditable(false);
+        txtemployName.setBackground(new java.awt.Color(255, 255, 255));
 
         lblEmployeeAddress.setText("Employee Address:");
 
         txtEmployeeAddress.setEditable(false);
+        txtEmployeeAddress.setBackground(new java.awt.Color(255, 255, 255));
 
         btnSaveEmployee.setText("Delete Employee Record");
         btnSaveEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -69,12 +74,12 @@ public class FrmDeleteEmployee extends javax.swing.JDialog {
                 DeleteStudent(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnSaveEmployeeMouseEntered(evt);
+                btnDeleteEmployeeMouseEntered(evt);
             }
         });
         btnSaveEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveEmployeeActionPerformed(evt);
+                btnDelete(evt);
             }
         });
 
@@ -86,6 +91,7 @@ public class FrmDeleteEmployee extends javax.swing.JDialog {
         });
 
         txtPhone.setEditable(false);
+        txtPhone.setBackground(new java.awt.Color(255, 255, 255));
 
         lblEmployeePhone.setText("Phone:");
 
@@ -95,24 +101,23 @@ public class FrmDeleteEmployee extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblEmployeeNo)
+                    .addComponent(lblemployName)
+                    .addComponent(lblEmployeeAddress)
+                    .addComponent(lblEmployeePhone))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblEmployeeNo)
-                            .addComponent(lblemployName)
-                            .addComponent(lblEmployeeAddress)
-                            .addComponent(lblEmployeePhone))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtEmployeeNo, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                                .addComponent(txtemployName)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnSaveEmployee)
-                                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(txtEmployeeAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnClose))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnSaveEmployee)
+                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(82, 82, 82)
+                        .addComponent(btnClose))
+                    .addComponent(txtEmployeeAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtemployName, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmployeeNo, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,6 +159,7 @@ public class FrmDeleteEmployee extends javax.swing.JDialog {
         _employee.SetEmployeeAddress(txtEmployeeAddress.getText());
          _employee.SetPhone(txtPhone.getText());
         String csvFilename = "Employees.csv";
+        JOptionPane.showMessageDialog(this, "Successfully Deleted!");
         try {
             _employee.DeleteStudent(csvFilename);
             txtEmployeeNo.setText("");
@@ -165,13 +171,15 @@ public class FrmDeleteEmployee extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_DeleteStudent
 
-    private void btnSaveEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveEmployeeActionPerformed
-       
-    }//GEN-LAST:event_btnSaveEmployeeActionPerformed
-
-    private void btnSaveEmployeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveEmployeeMouseEntered
+    private void btnDeleteEmployeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteEmployeeMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSaveEmployeeMouseEntered
+    }//GEN-LAST:event_btnDeleteEmployeeMouseEntered
+
+    private void btnDelete(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelete
+        // TODO add your handling code here:
+        
+       
+    }//GEN-LAST:event_btnDelete
 
     /**
      * @param args the command line arguments
@@ -203,7 +211,7 @@ public class FrmDeleteEmployee extends javax.swing.JDialog {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmNewEmployee().setVisible(true);
+                
             }
         });
     }

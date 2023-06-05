@@ -134,6 +134,7 @@ public class FrmLogin extends javax.swing.JFrame {
             if(_login.IsAuthenticated()){
                 JOptionPane.showMessageDialog(this, "Login Successful!");
                 setVisible(false);
+                FrmLogin.this.dispose();
                 FrmMainMenu _main = new FrmMainMenu();
                 _main.setVisible(true);
                

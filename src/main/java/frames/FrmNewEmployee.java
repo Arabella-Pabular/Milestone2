@@ -49,6 +49,12 @@ public class FrmNewEmployee extends javax.swing.JDialog {
 
         lblEmployeetNo.setText("Employee No.:");
 
+        txtEmployeeNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmployeeNoActionPerformed(evt);
+            }
+        });
+
         lblEmployeeName.setText("Employee Name:");
 
         lblEmployeeAddress.setText("Employee Address:");
@@ -199,6 +205,10 @@ public class FrmNewEmployee extends javax.swing.JDialog {
     private void btnSaveEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveEmployeeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSaveEmployeeActionPerformed
+
+    private void txtEmployeeNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmployeeNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmployeeNoActionPerformed
 
     /**
      * @param args the command line arguments

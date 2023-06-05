@@ -229,9 +229,11 @@ public class Employee {
         String[] line;
         try(CSVWriter writer = new CSVWriter(new FileWriter(tempFilename, true))){
             while((line = reader.readNext()) != null){
-                if(!line[0].equals(_employeeNo)){ //12346
+                if(!line[0].equals(_employeeNo)){
+                     
+                 
                     writer.writeNext(line);
-                }
+                }    
             }
             reader.close();
         } finally {
