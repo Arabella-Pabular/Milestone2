@@ -7,6 +7,7 @@ package classes;
 //import frames.FrmStudentGrade;
 
 import frames.FrmLogin;
+import frames.FrmNewEmployee;
 /**
  *
  * @author ajbab
@@ -18,6 +19,9 @@ public class Launcher {
         FrmLogin _login = new FrmLogin();
         _login.setVisible(true);
         
+      
         
     }
+    
+   
 }

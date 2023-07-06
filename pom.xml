@@ -17,12 +17,17 @@
             <artifactId>AbsoluteLayout</artifactId>
             <version>SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>jcalendar-1.4</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <exec.mainClass>studentapplication.classes.StudentApplication</exec.mainClass>
+        <exec.mainClass>studentapplication.classes.StudentApplication</exec.mainClass> 
     </properties>
     <name>EmployeeApplication</name>
     <repositories>
